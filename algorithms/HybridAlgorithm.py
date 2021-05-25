@@ -1,9 +1,9 @@
 from pathlib import Path
-import json
 import pandas as pd
+import json
+import os
 
-CONFIG_PATH = Path('C:/Users/yairi/OneDrive/Desktop/University/AP2/AP2-Ex2/config/algorithms')
-
+CONFIG_PATH = os.getcwd() + '/config'
 
 class HybridAlgorithm:
 
@@ -12,7 +12,7 @@ class HybridAlgorithm:
 
     @staticmethod
     def _parse_csv(path: str) -> dict:
-        with open(CONFIG_PATH / 'column_titles.json', 'r') as titles_config:
+        with open(CONFIG_PATH + '/algorithms/column_titles.json', 'r') as titles_config:
             titles = list(json.load(titles_config).keys())
         df = pd.read_csv(path)
         row_as_df = pd.DataFrame(list(df.columns), list(df.columns))
