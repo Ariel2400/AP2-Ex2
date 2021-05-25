@@ -10,9 +10,8 @@ def parse_csv(path: str) -> dict:
         titles = list(json.load(titles_config).keys())
     df = pd.read_csv(path)
     row_as_df = pd.DataFrame(list(df.columns), list(df.columns))
-    df = row_as_df.transpose().append(df)
+    df = row_as_df.transpose().append(df, ignore_index=True)
     df.columns = titles
     d = df.to_dict()
-    d.update()
     return d
 
