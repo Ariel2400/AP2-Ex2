@@ -1,8 +1,5 @@
-from pathlib import Path
 from algorithms.algorithm_utils import *
 from algorithms.BaseAlgorithm import BaseAlgorithm
-import pandas as pd
-import socket
 import json
 import os
 
@@ -11,8 +8,8 @@ CONFIG_PATH = os.getcwd() + '/config'
 
 class HybridAlgorithm(BaseAlgorithm):
 
-    def __init__(self, path: str):
-        super().__init__(path)
+    def __init__(self, path_to_reg_flight: str, path_to_anomaly_flight: str):
+        super().__init__(path_to_reg_flight, path_to_anomaly_flight)
 
     def detect_anomalies(self):
         sock = super().detect_anomalies()
