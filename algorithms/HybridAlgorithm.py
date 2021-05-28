@@ -13,14 +13,19 @@ class HybridAlgorithm(BaseAlgorithm):
 
     def detect_anomalies(self):
         sock = super().detect_anomalies()
-        sock.send(b'3\n') # anomaly detection with hybrid algorithm
+        sock.send(b'3\n')  # anomaly detection with hybrid algorithm
+        time.sleep(0.5)
+        b = sock.recv(2048)
+        time.sleep(0.1)
         sock.send(b'5\n')
-        b = sock.recv(100000).decode() # get anomaly detection results
+        time.sleep(0.1)
+        sock.recv(9)
+        time.sleep(0.5)
+        b = sock.recv(100000000).decode()
         d = dict()
         for line in b.split('\n'):
-            time, desc = line.split('\t')[0], line.split('\t')[1]
-            d[time] = desc
+            if line == 'Done.':
+                break
+            time_stamp, desc = line.split('\t')[0], line[line.index('\t') + 1:]
+            d[time_stamp] = desc
         return json.dumps(d)
-
-
-
