@@ -11,7 +11,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        if not (save_file_to_uploads('reg_csv') and save_file_to_uploads('irreg_csv')):
+        if not (save_file_to_uploads('train_csv') and save_file_to_uploads('test_csv')):
             return render_template('check.html', display_data=False, result={})
         # debug
         print(f"Chosen algorithm: {request.form.get('algorithms')}")
