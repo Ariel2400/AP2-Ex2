@@ -1,4 +1,5 @@
 # AP2-Ex2
+please open from text editor for better view.
 project by: Yair koskas, Tsela Gam Zo Letova, Ariel Grosh, Itay Gradenwits.
 special requirements for this project: 
         We used python and some of its libraries to built this project. in order to install them download the requirements.txt file
@@ -32,7 +33,7 @@ how to run the project:
            2) for user story 2 send an http post request to: "http://127.0.0.1:8080/" and add json object as argument.
                   please decode the json in this format: {'algo_type': <algorithm Type>, 'reg_csv': <path1> , 'irreg_csv': <path2>}
                    - <algorithm type> is a string who represnt the algorithm type we'll run use to detect the anomalies,
-                     choose between LinearAlgorithm and HybridAlgorithm.
+                     choose between hybrid and regression.
                    - <path1> is a path to a correct csv file without anomalies.
                    - <path2> is a path ao a csv file that might contains anomalies.
                   the post request will return a json object represnt the anomalies at the file.
