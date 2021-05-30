@@ -17,9 +17,17 @@ api = Api(app)
 class MY_API(Resource):
 
     def post(self) -> str:
+        
+        # now algo_type contains HybridAlgorithm or LinearAlgorithm.
         algo_type = request.json['algo_type']
+        
+        #contains the path to the first file.
         correct_csv = request.json['reg_csv']
+        
+        #contains the path to the second file.
         false_csv = request.json['irreg_csv']
+        
+        # detect the anomalies:
         if algo_type == "hybrid":
             x = HybridAlgorithm(correct_csv, false_csv)
         else:
