@@ -1,5 +1,4 @@
 # AP2-Ex2
-Please open from text editor for better view.
 
 ### Video explaining about our project: https://screenrec.com/share/NVhC7tX4ge
 
