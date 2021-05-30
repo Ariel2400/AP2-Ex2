@@ -1,12 +1,13 @@
-import json, os
-from pprint import pprint
+import json
+import os
 
 import requests
 from flask import Flask, render_template, request
 from flask_restful import Api, Resource
 
-from algorithms.LinearAlgorithm import LinearAlgorithm
 from algorithms.HybridAlgorithm import HybridAlgorithm
+from algorithms.LinearAlgorithm import LinearAlgorithm
+
 BASE = 'http://127.0.0.1:5000/detect'
 app = Flask(__name__)
 api = Api(app)
@@ -23,8 +24,8 @@ class MY_API(Resource):
             x = HybridAlgorithm(correct_csv, false_csv)
         else:
             x = LinearAlgorithm(correct_csv, false_csv)
-
-        return x.detect_anomalies()
+        x_detect = x.detect_anomalies()
+        return x_detect
 
 
 api.add_resource(MY_API, "/detect")
@@ -43,13 +44,9 @@ def index():
         # debug
         reg_path = os.path.join(app.config['UPLOAD_FOLDER'], request.files['reg_csv'].filename)
         irreg_path = os.path.join(app.config['UPLOAD_FOLDER'], request.files['irreg_csv'].filename)
-        print(f"Chosen algorithm: {request.form.get('algorithms')}")
         algo_type = request.form.get('algorithms')
-        # here's the function that processes the data and returns json_res
-        # json_res = api.post()
-        response = requests.post(BASE, json={'algo_type': algo_type, 'reg_csv': reg_path, 'irreg_path': irreg_path})
+        response = requests.post(BASE, json={'algo_type': algo_type, 'reg_csv': reg_path, 'irreg_csv': irreg_path})
         res_json = response.json()
-        # json_res = test_json()
         dict_res = json.loads(res_json)
         return render_template('check.html', display_data=True, result=dict_res)
 
@@ -64,11 +61,6 @@ def save_file_to_uploads(name: str) -> bool:
         return True
     except:
         return False
-
-
-def test_json():
-    x = {"success": "yes", "failure": "no"}
-    return json.dumps(x)
 
 
 if __name__ == '__main__':
