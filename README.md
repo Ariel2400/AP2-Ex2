@@ -1,7 +1,7 @@
 # AP2-Ex2
 project by: Yair koskas, Tseela Gam Zo Letova, Ariel Grosh, Itay Gradenwits.
 
-special requirements for this project: 
+Special requirements for this project: 
         We used python and some of its libraries to built this project. in order to install them download the requirements.txt file
         we put at the repesitory and run the next command from the shell at the present of the file:
         pip install -r requirements.txt
