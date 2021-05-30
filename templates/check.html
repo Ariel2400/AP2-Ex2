@@ -26,22 +26,24 @@
 
     <input type="submit" value="Upload">
 </form>
-{%if display_data%}
+{%if display_data%} <!--whether the table is displayed or not-->
 <table>
     <tr>
-        <td> Name </td> 
-        <td> Status </td>
+        <td> Time Stamp </td>
+        <td> Description 1</td>
+        <td> Description 2</td>
     </tr>
 
-
-{% for name, status in result.items() %}
+    {% for line in result %}
 
     <tr>
-        <td>{{ name }}</td> 
-        <td>{{ status }}</td>
+        <td> {{ line['t_stamp'] }} </td>
+        <td> {{ line['p_1'] }} </td>
+        <td> {{ line['p_2'] }} </td>
     </tr>
 
-{% endfor %}
+    {% endfor %}
+</table>
 {%endif%}
 </body>
 </html>
