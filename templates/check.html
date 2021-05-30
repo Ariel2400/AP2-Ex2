@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AP2 - The Dream Team</title>
+    <style>
+        body {
+            background-color: lightcyan;
+            font-family: Arial, serif;
+            text-align: center;
+            color: black;
+        }
+
+        h1 {
+            color: midnightblue;
+            font-size: xxx-large;
+        }
+
+        h2 {
+            -ms-text-size-adjust: auto;
+        }
+
+        input[type=file] {
+            border: 1px dotted darkgray;
+            background-color: white;
+            color: gray;
+            padding: 4px 8px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input[type=submit] {
+            background-color: cornflowerblue;
+            border: 2px solid white;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size : 35px;
+        }
+    </style>
+</head>
+<body>
+<h1>Anomaly Detection Server</h1>
+<form action={{url_for("index")}} method ="POST" enctype = "multipart/form-data">
+    <h2>
+    <label for="algorithms">Choose an algorithm:</label>
+    <select name="algorithms" id="algorithms">
+        <option value="regression">Regression-based algorithm</option>
+        <option value="hybrid">Hybrid algorithm</option>
+    </select>
+    </h2>
+
+    <br><br>
+
+    <h2>
+    <label for="irreg_csv">Upload your test csv file:</label>
+    <input type="file" name="irreg_csv" accept=".csv"/>
+
+    <br><br>
+
+    <label for="reg_csv">Upload your train csv file:</label>
+    <input type="file"  name="reg_csv" accept=".csv"/>
+    </h2>
+
+    <br><br>
+
+    <input type="submit" value="Upload">
+</form>
+{%if display_data%} <!--whether the table is displayed or not-->
+<table>
+    <tr>
+        <td> Time Stamp </td>
+        <td> Description 1</td>
+        <td> Description 2</td>
+    </tr>
+
+    {% for line in result %}
+
+    <tr>
+        <td> {{ line['t_stamp'] }} </td>
+        <td> {{ line['p_1'] }} </td>
+        <td> {{ line['p_2'] }} </td>
+    </tr>
+
+    {% endfor %}
+</table>
+{%endif%}
+</body>
+</html>
