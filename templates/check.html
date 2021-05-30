@@ -29,18 +29,18 @@
 {%if display_data%}
 <table>
     <tr>
-        <td> Name </td> 
-        <td> Status </td>
+        <td> Time Stamp </td>
+        <td> Description </td>
     </tr>
 
 
-{% for name, status in result.items() %}
+{% for t_stamp, desc in result.items() %}
 
     <tr>
-        <td>{{ name }}</td> 
-        <td>{{ status }}</td>
+        <td>{{ t_stamp }}</td>
+        <td>{{ desc }}</td>
     </tr>
-
+</table>
 {% endfor %}
 {%endif%}
 </body>
