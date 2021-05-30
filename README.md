@@ -1,25 +1,30 @@
 # AP2-Ex2
-please open from text editor for better view.
-project by: Yair koskas, Tsela Gam Zo Letova, Ariel Grosh, Itay Gradenwits.
-special requirements for this project: 
+Please open from text editor for better view.
+
+### Video explaining about our project: https://screenrec.com/share/NVhC7tX4ge
+
+Project by: Yair koskas, Tsela Gam Zo Letova, Ariel Grosh, Itay Gradenwits.
+Special requirements for this project: 
         We used python and some of its libraries to built this project. in order to install them download the requirements.txt file
         we put at the repesitory and run the next command from the shell at the present of the file:
         pip install -r requirements.txt
         
 Explanation about the directories hierarchy of the project:
-      - In AP1_code you'll see the files that our lecturer Eli gave us. this directory is actually the server of runs the anomalies detection algorithms.
-      - In algorithm directory you'll see the client side files who parse the csv files and uses the server functionallity to detect anomallies.
-      - In config directory you'll see the configuration files for this project.
-      - In Templates you'll see css and html files for the web app.
-      - In tests you'll see some tests we used to check our code.
-      - In app.py you'll see the main program which implements the get and post requests that our app supports and also run the app.
+  - In AP1_code you'll see the files that our lecturer Eli gave us. this directory is actually the server of runs the anomalies detection algorithms.
+  - In algorithm directory you'll see the client side files who parse the csv files and uses the server functionallity to detect anomallies.
+  - In config directory you'll see the configuration files for this project.
+  - In Templates you'll see css and html files for the web app.
+  - In tests you'll see some tests we used to check our code.
+  - In app.py you'll see the main program which implements the get and post requests that our app supports and also run the app.
     
 how to run the project:
-        1. first we need to run the anomaly detection server. Run the next command from the shell (please run it from AP2-Ex2 directory):
+   1. first we need to run the anomaly detection server. Run the next command from the shell (please run it from AP2-Ex2 directory):
             ./AP1_code 8081
-        2. Next we need to run the app. Run the next command from the shell (please run it from AP2-Ex2 directory):
+
+   2. Next we need to run the app. Run the next command from the shell (please run it from AP2-Ex2 directory):
             ./app.py
-        3. now the app is running:
+
+   3. now the app is running:
            
           1) for user story 1 go to : "http://127.0.0.1:8080/".
               That's would lead you to our app. The app support the next functionality:
