@@ -30,15 +30,16 @@
 <table>
     <tr>
         <td> Time Stamp </td>
-        <td> Description </td>
+        <td> Description 1</td>
+        <td> Description 2</td>
     </tr>
 
-
-    {% for t_stamp, desc in result.items() %}
+    {% for line in result %}
 
     <tr>
-        <td>{{ t_stamp }}</td>
-        <td>{{ desc }}</td>
+        <td> {{ line['t_stamp'] }} </td>
+        <td> {{ line['p_1'] }} </td>
+        <td> {{ line['p_2'] }} </td>
     </tr>
 
     {% endfor %}

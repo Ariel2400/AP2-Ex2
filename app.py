@@ -52,7 +52,8 @@ def index():
         res_json = response.json()
         # parse the json into dict
         dict_res = json.loads(res_json)
-        return render_template('check.html', display_data=True, result=dict_res)
+        anom_list = dict_res['anomalies']
+        return render_template('check.html', display_data=True, result=anom_list)
     # if no request has been made, return the regular form
     return render_template('check.html', display_data=False, result={})
 

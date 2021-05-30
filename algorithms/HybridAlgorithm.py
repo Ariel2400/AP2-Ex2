@@ -1,5 +1,5 @@
 from algorithms.algorithm_utils import *
-from algorithms.BaseAlgorithm import BaseAlgorithm
+from algorithms.BaseAlgorithm import BaseAlgorithm, parse_lines_to_dict
 import json
 import os
 
@@ -23,9 +23,6 @@ class HybridAlgorithm(BaseAlgorithm):
         time.sleep(0.5)
         b = sock.recv(100000000).decode()
         d = dict()
-        for line in b.split('\n'):
-            if line == 'Done.':
-                break
-            time_stamp, desc = line.split('\t')[0], line[line.index('\t') + 1:]
-            d[time_stamp] = desc
+        lines = b.split('\n')
+        d=parse_lines_to_dict(lines)
         return json.dumps(d)
