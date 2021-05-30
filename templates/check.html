@@ -34,14 +34,15 @@
     </tr>
 
 
-{% for t_stamp, desc in result.items() %}
+    {% for t_stamp, desc in result.items() %}
 
     <tr>
         <td>{{ t_stamp }}</td>
         <td>{{ desc }}</td>
     </tr>
+
+    {% endfor %}
 </table>
-{% endfor %}
 {%endif%}
 </body>
 </html>
