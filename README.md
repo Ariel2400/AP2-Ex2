@@ -2,7 +2,7 @@
 
 ### Video explanation about our project: https://screenrec.com/share/NVhC7tX4ge
 
-Project by: Yair koskas, Tsela Gam Zo Letova, Ariel Grosh 213214026, Itay Gradenwits 213713522.
+Project by: Yair koskas, Tsela Gam Zo Letova, Ariel Grosh , Itay Gradenwits .
 Special requirements for this project: 
         We used python and some of its libraries to built this project. in order to install them download the requirements.txt file
         we put at the repesitory and run the next command from the shell at the present of the file:
