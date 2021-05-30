@@ -6,7 +6,9 @@ import os
 CONFIG_PATH = os.getcwd() + '/config'
 
 
+
 class LinearAlgorithm(BaseAlgorithm):
+
 
     def __init__(self, path_to_reg_flight: str, path_to_anomaly_flight: str):
         super().__init__(path_to_reg_flight, path_to_anomaly_flight)
