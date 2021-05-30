@@ -8,7 +8,7 @@ from flask_restful import Api, Resource
 from algorithms.HybridAlgorithm import HybridAlgorithm
 from algorithms.LinearAlgorithm import LinearAlgorithm
 
-BASE = 'http://127.0.0.1:5000/detect'
+BASE = 'http://127.0.0.1:8080/detect'
 app = Flask(__name__)
 api = Api(app)
 
@@ -88,4 +88,4 @@ def save_file_to_uploads(name: str) -> bool:
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=8080)
