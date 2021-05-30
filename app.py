@@ -30,6 +30,7 @@ class MY_API(Resource):
 
 api.add_resource(MY_API, "/detect")
 
+# set upload directory
 UPLOAD_DIR = os.getcwd() + '/uploads'
 if not os.path.exists(UPLOAD_DIR):
     os.mkdir(UPLOAD_DIR)
@@ -38,19 +39,41 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 
 @app.route('/', methods=["GET", "POST"])
 def index():
+    # when user hits 'submit', they send a post request
     if request.method == "POST":
+        # check if files have been saved
         if not (save_file_to_uploads('reg_csv') and save_file_to_uploads('irreg_csv')):
             return render_template('check.html', display_data=False, result={})
-        # debug
-        reg_path = os.path.join(app.config['UPLOAD_FOLDER'], request.files['reg_csv'].filename)
-        irreg_path = os.path.join(app.config['UPLOAD_FOLDER'], request.files['irreg_csv'].filename)
+        reg_path = get_path_in_uploads('reg_csv')
+        irreg_path = get_path_in_uploads('irreg_csv')
         algo_type = request.form.get('algorithms')
+        # send a POST request to the API
         response = requests.post(BASE, json={'algo_type': algo_type, 'reg_csv': reg_path, 'irreg_csv': irreg_path})
         res_json = response.json()
+        # parse the json into dict
         dict_res = json.loads(res_json)
         return render_template('check.html', display_data=True, result=dict_res)
-
+    # if no request has been made, return the regular form
     return render_template('check.html', display_data=False, result={})
+
+
+"""
+a function that returns the path of the file
+:arg attr_name: the type of the file(should be reg_csv/irreg_csv)
+
+:returns: the path of the file in the uploads dir
+"""
+
+
+def get_path_in_uploads(attr_name: str) -> str:
+    return os.path.join(app.config['UPLOAD_FOLDER'], request.files[attr_name].filename)
+
+
+"""
+saves the file from the form to uploads dir
+
+:returns: True if save was successful, False otherwise
+"""
 
 
 def save_file_to_uploads(name: str) -> bool:
