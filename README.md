@@ -5,7 +5,7 @@ special requirements for this project:
         we put at the repesitory and run the next command from the shell at the present of the file:
         pip install -r requirements.txt
         
-Explanation about the firectories hierarchy of the project:
+Explanation about the directories hierarchy of the project:
       - In AP1_code you'll see the files that our lecturer Eli gave us. this directory is actually the server of runs the anomalies detection algorithms.
       - In algorithm directory you'll see the client side files who parse the csv files and uses the server functionallity to detect anomallies.
       - In config directory you'll see the configuration files for this project.
