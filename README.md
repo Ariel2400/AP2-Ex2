@@ -1,4 +1,4 @@
-# AP2-Ex2
+# AP2-Ex2: Anomalie-Detetction Web App
 
 ### Video explanation about our project: https://screenrec.com/share/NVhC7tX4ge
 
