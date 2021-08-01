@@ -29,7 +29,7 @@ how to run the project:
                 - choose an algorithm type  for the anomalie detection.
                 - choose a csv file who doesn't contains anomalies.
                 - choose a csv file whi might contains anomalies.
-                - press submit and you'll see information about the files and the anomalies at it.      
+                - press submit and you'll see information about the files and the anomalies at it.
            2. for user story 2 send an http post request to: "http://127.0.0.1:8080/" and add json object as argument.
                   please decode the json in this format: {'algo_type': <algorithm Type>, 'reg_csv': <path1> , 'irreg_csv': <path2>}
                    - <algorithm type> is a string who represnt the algorithm type we'll run use to detect the anomalies,
