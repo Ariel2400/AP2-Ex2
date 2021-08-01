@@ -1,4 +1,4 @@
-# AP2-Ex2: Anomalie-Detetction Web App
+# AP2-Ex2: Anomaly-Detetction Web App
 
 ### Video explanation about our project: https://screenrec.com/share/NVhC7tX4ge
 
@@ -26,7 +26,7 @@ how to run the project:
    3. now the app is running:
         1. for user story 1 go to : "http://127.0.0.1:8080/".
               That would lead you to our app. The app support the next functionality:
-                - choose an algorithm type  for the anomalie detection.
+                - choose an algorithm type  for the anomaly detection.
                 - choose a csv file who doesn't contains anomalies.
                 - choose a csv file whi might contains anomalies.
                 - press submit and you'll see information about the files and the anomalies at it.
