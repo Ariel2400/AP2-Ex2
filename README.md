@@ -23,8 +23,8 @@ how to run the project:
    2. Next we need to run the app. Run the next command from the shell (please run it from AP2-Ex2 directory):
             ./app.py
 
-   3. now the app is running    
-          1. for user story 1 go to : "http://127.0.0.1:8080/".
+   3. now the app is running:
+   1. for user story 1 go to : "http://127.0.0.1:8080/".
               That would lead you to our app. The app support the next functionality:
                 - choose an algorithm type  for the anomalie detection.
                 - choose a csv file who doesn't contains anomalies.
